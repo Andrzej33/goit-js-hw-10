@@ -14,9 +14,9 @@ refs.input.addEventListener('input', onCountryElected)
 function onCountryElected(evt) {
     evt.preventDefault();
     API.fetchCountries(refs.input.value)
-        .then(country => {
-            console.log(country)
-        })
+        .then(countries =>  
+            console.log(countries)
+        )
         .catch(catchError)
         // .finally(()=> {refs.input.value ='' })
 }
