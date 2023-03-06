@@ -1,0 +1,2 @@
+!function(){var n={fetchCountries:function(n){return fetch("https://restcountries.com/v3.1/all?fields=name,capital,population,flags,languages").then((function(n){return n.json()}))}};var t={input:document.getElementById("search-box")};function e(n){console.log(n),alert("choose more specyfic country")}t.input.addEventListener("input",(function(o){o.preventDefault(),n.fetchCountries(t.input.value).then((function(n){return console.log(n)})).catch(e)}))}();
+//# sourceMappingURL=index.e4e8faed.js.map
