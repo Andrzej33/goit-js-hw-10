@@ -1,0 +1,2 @@
+var t={fetchCountries:function(t){return fetch("https://restcountries.com/v3.1/all?fields=name.official,capital,population,flags.svg,languages").then((t=>t.json()))}};const e={input:document.getElementById("search-box")};function n(t){console.log(t),alert("choose more specyfic country")}e.input.addEventListener("input",(function(o){o.preventDefault(),t.fetchCountries(e.input.value).then((t=>{console.log(t)})).catch(n)}));
+//# sourceMappingURL=index.0d3c3089.js.map
