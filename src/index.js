@@ -1,19 +1,35 @@
 import './css/styles.css';
+import API from './fecthCountries';
 
 const DEBOUNCE_DELAY = 300;
 
-const f =
-    fetch("https://restcountries.com/v3.1/all")
-        .then(response => {
-           
-            return response.json();
-        })
+
+
+const refs = {
+    input: document.getElementById('search-box')
+}
+
+refs.input.addEventListener('input', onCountryElected)
+
+function onCountryElected(evt) {
+    evt.preventDefault();
+    API.fetchCountries(refs.input.value)
         .then(country => {
             console.log(country)
         })
-        .catch(error => {
-            console.log(error)
-        })
+        .catch(catchError)
+        // .finally(()=> {refs.input.value ='' })
+}
+
+// console.log(refs.input)
+
+function catchError(error) {
+console.log(error)
+            alert('choose more specyfic country')
+}
+
+
+
 
 // console.log(f)
 
