@@ -1,5 +1,5 @@
 import './css/styles.css';
-import API from './fecthCountries';
+// import { fetchCountries } from './fecthCountries';
 
 const DEBOUNCE_DELAY = 300;
 
@@ -11,22 +11,25 @@ const refs = {
 
 refs.input.addEventListener('input', onCountryElected)
 
-function onCountryElected(evt) {
-    evt.preventDefault();
-    API.fetchCountries(refs.input.value)
+function onCountryElected(_evt) {
+    // evt.preventDefault();
+    const name = refs.input.value
+    fetchCountries(name)
         .then(countries =>  
-            console.log(countries)
-        )
-        .catch(catchError)
-        // .finally(()=> {refs.input.value ='' })
-}
+            console.log(countries))
+            // // API.fetchCountries()
+    //         // console.log(refs.input.value)
+    //     )
+    //     .catch(catchError)
+    //     // .finally(()=> {refs.input.value ='' })
+ }
 
 // console.log(refs.input)
 
-function catchError(error) {
-console.log(error)
-            alert('choose more specyfic country')
-}
+// function catchError(error) {
+// console.log(error)
+//             alert('choose more specyfic country')
+// }
 
 
 
@@ -36,3 +39,10 @@ console.log(error)
 
 
 // fetchCountries(name)
+function fetchCountries(name)  {
+    return fetch(`https://restcountries.com/v3.1/name/${name}`)
+        .then(response => response.json())
+       
+}
+
+// fetchCountries()

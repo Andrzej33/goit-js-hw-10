@@ -1,9 +1,18 @@
 
-export default { fetchCountries };
+// export default { fetchCountries };
 
 
-function fetchCountries(name) { 
-   return fetch("https://restcountries.com/v3.1/all?fields=name,capital,population,flags,languages",)
-       .then(response => 
-           response.json())     
-}
+// export const fetchCountries = name => {
+//     return fetch("https://restcountries.com/v2/name/${name}")
+//         .then(response => {
+//             if (!response.ok) {
+//                 if (response.status === 404) {
+//                     return [];
+//                 }
+//                 throw new Error(response.status);
+//             }
+//             return response.json();
+//         })
+// }
+
+// ?fields=name,capital,population,flags,languages
